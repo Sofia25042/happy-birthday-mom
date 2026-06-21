@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Mẹ Yêu 26/06</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf6f0;
+            color: #5a4b41;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        /* ==========================================
+   1. SỬA LỖI FONT TIẾNG VIỆT (Thêm vào đầu file style)
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif; /* Font nền hiện đại, rõ ràng */
+    background-color: #faf6f0;
+    color: #5a4b41;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Áp dụng font mới cho các tiêu đề để không bị lỗi dấu chữ "Nhất" */
+header h1, .letter-title {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   2. SỬA LỖI HỘP QUÀ BỊ LỆCH NƠ (Thay thế đoạn cũ)
+   ========================================== */
+.gift-container {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Thắt nơ phía trên */
+.gift-bow {
+    width: 60px;
+    height: 30px;
+    background-color: #f4a261;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    margin-bottom: -5px; /* Đẩy sát vào hộp quà */
+    z-index: 2;
+}
+
+/* Hộp quà chính */
+.gift-box {
+    width: 140px;
+    height: 140px;
+    background-color: #e76f51;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(231, 111, 81, 0.3);
+}
+
+/* Ruy băng dọc */
+.gift-box::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    background-color: #f4a261;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+/* Ruy băng ngang */
+.gift-box::after {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 100%;
+    background-color: #f4a261;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+        /* Màn hình chào mừng (Hộp quà bí mật) */
+        #welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #fceade 0%, #f3d1be 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease-out, visibility 1s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #welcome-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .gift-container {
+            cursor: pointer;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .gift-box {
+            width: 140px;
+            height: 140px;
+            background-color: #e76f51;
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(231, 111, 81, 0.3);
+        }
+
+        .gift-box::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 100%;
+            background-color: #f4a261;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .gift-box::after {
+            content: '';
+            position: absolute;
+            height: 24px;
+            width: 100%;
+            background-color: #f4a261;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .gift-bow {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 30px;
+            background-color: #f4a261;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .welcome-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d96246;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        /* Khung nội dung chính */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+        }
+
+        .main-content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #d96246;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #8c7662;
+        }
+
+        /* Khung Dòng Thời Gian (Timeline) */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #ebdcd0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background-color: #e76f51;
+            border-radius: 50%;
+            border: 3px solid #faf6f0;
+            box-shadow: 0 0 0 3px #ebdcd0;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #e76f51;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-card {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(140, 118, 98, 0.05);
+            border: 1px solid #f1eae3;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 280px;
+            background-color: #f7ede2;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            border: 2px dashed #ddcbbb;
+            color: #a08b77;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .timeline-desc {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #6b594d;
+        }
+
+        /* Thư gửi mẹ */
+/* Khung bọc bức thư giấy */
+.letter-section {
+    background-color: #fffaf5;
+    border: 1px solid #f0e1d5;
+    border-radius: 16px;
+    
+    /* THẦN CHÚ ĐÓNG KHUNG: Giới hạn chiều rộng và căn giữa */
+    max-width: 680px;        /* Giới hạn độ rộng của bức thư không cho tràn màn hình */
+    margin: 80px auto 0 auto; /* Căn giữa khung thư ra chính giữa trang web */
+    
+    padding: 50px 45px;      /* Tạo khoảng cách từ chữ đến viền khung thư */
+    box-shadow: 0 20px 40px rgba(140, 118, 98, 0.1); /* Đổ bóng 3D nhẹ giúp bức thư nổi lên trên nền */
+    position: relative;
+}
+
+        .letter-section::before {
+            content: '💝';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background-color: #faf6f0;
+            padding: 0 15px;
+        }
+
+        .letter-title {
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            color: #d96246;
+            margin-bottom: 25px;
+        }
+
+.letter-content {
+    font-family: 'Playfair Display', serif; /* Font chữ có chân sang trọng */
+    font-size: 1.15rem;
+    line-height: 2.2; /* Tăng khoảng cách giữa các dòng chữ */
+    color: #5a4b41;
+    text-align: justify;
+    font-style: italic; /* Chữ nghiêng mềm mại kiểu thư tay */
+    
+    /* THẦN CHÚ QUAN TRỌNG: Tự động nhận diện xuống dòng và tạo khoảng cách đoạn */
+    white-space: pre-line; 
+    word-break: break-word;
+}
+
+/* MẸO QUAN TRỌNG: Tạo khoảng cách rõ ràng giữa các đoạn văn trong thư */
+.letter-content p {
+    margin-bottom: 25px; /* Đẩy các đoạn văn cách xa nhau ra */
+    text-indent: 30px;   /* Thụt đầu dòng đoạn văn cho đúng chuẩn thưa gửi */
+}
+
+/* Riêng dòng "Mẹ ơi," đầu tiên thì không cần thụt đầu dòng */
+.letter-content p:first-child {
+    text-indent: 0;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+        .letter-footer {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            font-weight: 600;
+            color: #d96246;
+            font-size: 1.1rem;
+        }
+
+        footer.page-footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #bfaea0;
+            font-size: 0.9rem;
+            border-top: 1px solid #ebdcd0;
+            margin-top: 80px;
+        }
+
+        /* Canvas hiệu ứng pháo hoa giấy */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Hiệu ứng cuộn trang xuất hiện */
+.timeline-item, .letter-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+/* Class này sẽ được JS tự động thêm vào khi mẹ cuộn trang tới */
+.reveal-active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+        /* Làm cho chiếc hộp chứa card ảnh có chiều sâu hơn */
+.timeline-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(140, 118, 98, 0.05);
+    border: 1px solid #f1eae3;
+    transition: transform 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px); /* Di chuột vào ảnh sẽ hơi nhấc lên nhẹ */
+}
+
+/* Biến khung ảnh thành tấm ảnh Polaroid chân thật */
+.photo-placeholder {
+    width: 100%;
+    height: 320px; /* Tăng chiều cao lên một chút nhìn cho sang */
+    background-color: #ffffff;
+    padding: 12px 12px 24px 12px; /* Viền trắng dày xung quanh ảnh giống ảnh thật */
+    border: 1px solid #e6ded6;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+    </style>
+</head>
+<body>
+    <audio id="bg-music" src="nhac-tang-me.mp3" loop></audio>
+
+    <div id="welcome-screen" onclick="openGift()">
+        <div class="gift-container">
+            <div class="gift-bow"></div>
+            <div class="gift-box"></div>
+        </div>
+        <h2 style="color: #5a4b41; font-family: 'Georgia', serif; font-size: 1.7rem; font-weight: normal;">Mẹ yêu ơi, con có một món quà nhỏ ở đây ạ...</h2>
+        <div class="welcome-text">BẤM VÀO HỘP QUÀ ĐỂ MỞ</div>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="main-content" id="main-content">
+        <header>
+            <h1>Chúc Mừng Sinh Nhật Mẹ Yêu!</h1>
+            <p>26.06.1989 — 26.06.2026</p>
+        </header>
+
+        <!-- Dòng thời gian kỷ niệm (Bản cập nhật mô tả dài, sâu sắc) -->
+        <div class="timeline">
+            
+            <!-- Kỷ niệm 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Kỷ niệm 1 — Ngày con còn bé xíu</div>
+                <div class="timeline-card">
+                    <div class="photo-placeholder">
+                        <img src="anh1.jpg" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <p class="timeline-desc">
+                        Cảm ơn mẹ đã luôn kiên nhẫn, dịu dàng nuôi nấng và chở che cho con từ những ngày con còn là một đứa trẻ bé xíu, chập chững tập đi những bước đầu đời và bập bẹ gọi tiếng "Mẹ ơi". Con biết, để nuôi con khôn lớn, mẹ đã phải đánh đổi biết bao đêm thức trắng, lo từng giấc ngủ, miếng ăn khi con ốm đau. Từng góc nhỏ trong ký ức ấu thơ của con đều được lấp đầy bởi hơi ấm từ vòng tay mẹ và ánh mắt hiền từ luôn dõi theo con. Sự hy sinh thầm lặng của mẹ là bầu trời bình yên nhất giúp con lớn lên mà không phải lo nghĩ về những giông bão ngoài kia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kỷ niệm 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Kỷ niệm 2 — Những khoảnh khắc đồng hành</div>
+                <div class="timeline-card">
+                    <div class="photo-placeholder">
+                        <img src="anh2.jpg" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <p class="timeline-desc">
+                        Nhìn lại những bức ảnh cũ, con nhớ vô cùng những chuyến đi cùng nhau, những buổi chiều hai mẹ con tâm sự và cả những bữa cơm gia đình giản dị nhưng ngập tràn tiếng cười. Nụ cười hạnh phúc và rạng rỡ của mẹ trong mỗi khoảnh khắc ấy chính là tài sản vô giá nhất đối với con. Dù cuộc sống ngoài kia có bận rộn đến đâu, mẹ vẫn luôn dành trọn vẹn thời gian để đồng hành, lắng nghe những câu chuyện không đầu không đuôi của con ở trường, ở lớp. Sự thấu hiểu và tình yêu thương vô điều kiện của mẹ đã dạy con biết cách yêu thương, biết sẻ chia và trở thành một người tử tế.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kỷ niệm 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Năm 2026 — Hiện tại ngọt ngào</div>
+                <div class="timeline-card">
+                    <div class="photo-placeholder">
+                        <img src="anh3.jpg" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <p class="timeline-desc">
+                        Năm 2026 đã đến, mẹ của con lại bước sang một tuổi mới, tóc mẹ có thể đã có vài sợi bạc và những vết hằn thời gian đã dần hiện trên khóe mắt. Nhưng đối với con, mẹ vẫn luôn là người phụ nữ xinh đẹp nhất, kiên cường nhất và tuyệt vời nhất trên thế gian này. Hôm nay, con tự hào vô cùng vì đã có thể tự tay vận dụng những kiến thức mình học được để viết nên những dòng code này dành riêng cho mẹ. Con mong rằng món quà công nghệ nhỏ bé nhưng chứa đựng tình cảm to lớn này sẽ mang lại cho mẹ một niềm vui bất ngờ và một ngày sinh nhật thật đáng nhớ.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Kỷ niệm 4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Giai đoạn mới — Cùng nhau trưởng thành</div>
+                <div class="timeline-card">
+                    <div class="photo-placeholder">
+                        <img src="anh4.jpg" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <p class="timeline-desc">
+                        Giờ đây, khi con đã lớn khôn và bắt đầu hành trình tự lập, con mới càng thấu hiểu sâu sắc hơn những vất vả mà mẹ đã trải qua. "Con dù lớn vẫn là con của mẹ, đi suốt đời lòng mẹ vẫn theo con." Con hứa sẽ không ngừng nỗ lực, học tập thật tốt và trưởng thành thật vững vàng để trở thành một bờ vai vững chắc, một chỗ dựa tinh thần đáng tin cậy cho mẹ. Con muốn từ nay về sau, mẹ không còn phải lo toan quá nhiều nữa, hãy để con là người che chở và mang lại bình yên cho mẹ. Hai mẹ con mình sẽ tiếp tục cùng nhau đi qua thêm thật nhiều mùa sinh nhật hạnh phúc phía trước, mẹ nhé!
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+<div class="letter-section">
+    <h3 class="letter-title">Thư Gửi Người Phụ Nữ Tuyệt Vời Nhất Của Con</h3>
+    <div class="letter-content">Mẹ yêu ơi,
+
+Nhân ngày sinh nhật của mẹ (26/06), con không biết nói gì hơn ngoài lòng biết ơn vô hạn. Cảm ơn mẹ vì đã sinh ra con, nuôi nấng con thành người và luôn bao dung che chở cho con trước mọi bão giông.
+
+Trang web này là do tự tay con tập tành viết code để tạo bất ngờ dành riêng cho mẹ đấy ạ! Con muốn dùng chút kiến thức công nghệ nhỏ bé này để lưu trữ lại những tình cảm to lớn nhất mà con dành cho mẹ.
+
+Chúc mẹ bước sang tuổi mới luôn luôn mạnh khỏe, tràn ngập niềm vui, lúc nào cũng cười thật tươi mẹ nhé. Con yêu mẹ nhiều lắm!</div>
+    <div class="letter-footer">Con yêuuu của mẹ ❤️</div>
+</div>
+
+        <footer class="page-footer">
+            <p>Made with ❤️ by Bảo An | 26/06/2026</p>
+        </footer>
+    </div>
+
+    <script>
+// Hàm xử lý sự kiện khi click mở hộp quà
+function openGift() {
+    const welcome = document.getElementById('welcome-screen');
+    const mainContent = document.getElementById('main-content');
+    
+    welcome.classList.add('hidden');
+    mainContent.classList.add('show');
+    
+    // BẬT NHẠC KHI MỞ HỘP QUÀ 🎶
+    const music = document.getElementById('bg-music');
+    music.play().catch(error => {
+        console.log("Trình duyệt chặn tự động phát, cần tương tác thêm:", error);
+    });
+    
+    // Kích hoạt pháo hoa giấy chúc mừng rơi từ trên xuống
+    initConfetti();
+    initFallingLeaves();
+}
+
+        // Logic hiệu ứng pháo hoa giấy bằng HTML5 Canvas siêu nhẹ
+        function initConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let pieces = [];
+            const numberOfPieces = 150;
+            const colors = ['#f4a261', '#e76f51', '#2a9d8f', '#e9c46a', '#f4a261'];
+
+            function Piece(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = (Math.random() * 8) + 6;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.speed = (Math.random() * 3) + 2;
+                this.angle = Math.random() * 360;
+                this.rotationSpeed = (Math.random() * 4) - 2;
+            }
+
+            for (let i = 0; i < numberOfPieces; i++) {
+                pieces.push(new Piece(Math.random() * canvas.width, Math.random() * -canvas.height));
+            }
+
+            function update() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                pieces.forEach(function(p) {
+                    p.y += p.speed;
+                    p.angle += p.rotationSpeed;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle * Math.PI / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+
+                    if (p.y > canvas.height) {
+                        p.y = -20;
+                        p.x = Math.random() * canvas.width;
+                    }
+                });
+
+                requestAnimationFrame(update);
+            }
+
+            update();
+            
+            // Tự động giải phóng bộ nhớ hiệu ứng sau 8 giây
+            setTimeout(() => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pieces = [];
+            }, 8000);
+        }
+
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            if(canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+        });
+    
+    // Hiệu ứng lá rơi/tim bay nhẹ nhàng xuyên suốt trang web
+function initFallingLeaves() {
+    const mainContent = document.getElementById('main-content');
+    const numberOfLeaves = 25; // Số lượng lá xuất hiện cùng lúc
+    const symbols = ['🌸', '💖', '✨', '🍀']; // Các biểu tượng dễ thương
+
+    for (let i = 0; i < numberOfPieces; i++) { // Tạo vòng lặp sinh lá ngẫu nhiên
+        createLeaf();
+    }
+
+    function createLeaf() {
+        const leaf = document.createElement('div');
+        leaf.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+        leaf.style.position = 'fixed';
+        leaf.style.top = '-20px';
+        leaf.style.left = Math.random() * 100 + 'vw';
+        leaf.style.fontSize = (Math.random() * 15 + 10) + 'px';
+        leaf.style.opacity = Math.random() * 0.6 + 0.2;
+        leaf.style.pointerEvents = 'none';
+        leaf.style.zIndex = '1';
+        
+        // Thời gian rơi ngẫu nhiên từ 5s đến 10s để tạo độ so le mượt mà
+        const duration = Math.random() * 5 + 5;
+        leaf.style.transition = `transform ${duration}s linear, opacity ${duration}s linear`;
+        
+        document.body.appendChild(leaf);
+
+        // Kích hoạt hiệu ứng rơi xuống sau khi element được add vào DOM
+        setTimeout(() => {
+            leaf.style.transform = `translateY(105vh) translateX(${(Math.random() * 100 - 50)}px) rotate(${Math.random() * 360}deg)`;
+        }, 50);
+
+        // Xóa element cũ đi sau khi rơi hết màn hình và tạo cái mới
+        setTimeout(() => {
+            leaf.remove();
+            createLeaf();
+        }, duration * 1000);
+    }
+}
+
+    // Tự động kiểm tra vị trí cuộn trang để hiển thị hiệu ứng mượt mà
+function revealOnScroll() {
+    const items = document.querySelectorAll('.timeline-item, .letter-section');
+    const triggerBottom = window.innerHeight * 0.85; // Điểm kích hoạt hiệu ứng
+
+    items.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        if (itemTop < triggerBottom) {
+            item.classList.add('reveal-active');
+        }
+    });
+}
+
+// Lắng nghe sự kiện cuộn chuột của trình duyệt
+window.addEventListener('scroll', revealOnScroll);
+    </script>
+</body>
+</html>
